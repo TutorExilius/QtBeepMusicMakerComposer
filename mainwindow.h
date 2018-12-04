@@ -24,6 +24,7 @@ public:
     void initialisiereTastenNotennamen();
     void initialisiereTasten();
     void frageNachNotenLaenge();
+    QString tastenNummer( const QString &notenName ) const;
     bool speichern() const;
 
     void leaveDialog();

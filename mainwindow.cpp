@@ -67,7 +67,7 @@ void MainWindow::initialisiereTasten()
 
         QObject::connect( button, &QPushButton::clicked,
                   [=](){
-                        this->appendText( " " + button->text() );
+                        this->appendText( " " + this->tastenNummer(button->text()) );
                         this->frageNachNotenLaenge();
                    }
                 );
@@ -126,7 +126,7 @@ void MainWindow::initialisiereTasten()
 
         QObject::connect( button, &QPushButton::clicked,
                   [=](){
-                        this->appendText( " " + button->text() );
+                        this->appendText( " " + this->tastenNummer( button->text() ) );
                         this->frageNachNotenLaenge();
                    }
                 );
@@ -189,6 +189,111 @@ void MainWindow::frageNachNotenLaenge()
     this->dialog->setAttribute( Qt::WA_DeleteOnClose, true );
 
     this->dialog->show();
+}
+
+QString MainWindow::tastenNummer(const QString &notenName) const
+{
+    static QMap<QString,QString> tastenNummern;
+
+    tastenNummern.insert( "C0", "-8" );
+    tastenNummern.insert( "Db0", "-7");
+    tastenNummern.insert( "D0", "-6" );
+    tastenNummern.insert( "Eb0", "-5");
+    tastenNummern.insert( "E0", "-4" );
+    tastenNummern.insert( "F0", "-3" );
+    tastenNummern.insert( "Gb0", "-2");
+    tastenNummern.insert( "G0", "-1" );
+    tastenNummern.insert( "Ab0", "0" );
+    tastenNummern.insert( "A0", "1" );
+    tastenNummern.insert( "Bb0", "2" );
+    tastenNummern.insert( "B0", "3" );
+    tastenNummern.insert( "C1", "4" );
+    tastenNummern.insert( "Db1", "5" );
+    tastenNummern.insert( "D1", "6" );
+    tastenNummern.insert( "Eb1", "7" );
+    tastenNummern.insert( "E1", "8" );
+    tastenNummern.insert( "F1", "9" );
+    tastenNummern.insert( "Gb1", "10");
+    tastenNummern.insert( "G1", "11" );
+    tastenNummern.insert( "Ab1", "12");
+    tastenNummern.insert( "A1", "13" );
+    tastenNummern.insert( "Bb1", "14");
+    tastenNummern.insert( "B1", "15" );
+    tastenNummern.insert( "C2",  "16");
+    tastenNummern.insert( "Db2", "17" );
+    tastenNummern.insert( "D2",  "18");
+    tastenNummern.insert( "Eb2", "19");
+    tastenNummern.insert( "E2",  "20");
+    tastenNummern.insert( "F2",  "21");
+    tastenNummern.insert( "Gb2", "22");
+    tastenNummern.insert( "G2",  "23");
+    tastenNummern.insert( "Ab2", "24");
+    tastenNummern.insert( "A2",  "25");
+    tastenNummern.insert( "Bb2", "26");
+    tastenNummern.insert( "B2",  "27");
+    tastenNummern.insert( "C3",  "28");
+    tastenNummern.insert( "Db3", "29" );
+    tastenNummern.insert( "D3",  "30");
+    tastenNummern.insert( "Eb3", "31");
+    tastenNummern.insert( "E3",  "32");
+    tastenNummern.insert( "F3",  "33");
+    tastenNummern.insert( "Gb3", "34");
+    tastenNummern.insert( "G3",  "35");
+    tastenNummern.insert( "Ab3", "36");
+    tastenNummern.insert( "A3",  "37");
+    tastenNummern.insert( "Bb3", "38");
+    tastenNummern.insert( "B3",  "39");
+    tastenNummern.insert( "C4", "40" );
+    tastenNummern.insert( "Db4", "41" );
+    tastenNummern.insert( "D4", "42" );
+    tastenNummern.insert( "Eb4","43" );
+    tastenNummern.insert( "E4", "44" );
+    tastenNummern.insert( "F4", "45" );
+    tastenNummern.insert( "Gb4","46" );
+    tastenNummern.insert( "G4", "47" );
+    tastenNummern.insert( "Ab4","48" );
+    tastenNummern.insert( "A4", "49" );
+    tastenNummern.insert( "Bb4","50" );
+    tastenNummern.insert( "B4", "51" );
+    tastenNummern.insert( "C5", "52" );
+    tastenNummern.insert( "Db5", "53" );
+    tastenNummern.insert( "D5", "54" );
+    tastenNummern.insert( "Eb5","55" );
+    tastenNummern.insert( "E5", "56" );
+    tastenNummern.insert( "F5", "57" );
+    tastenNummern.insert( "Gb5","58" );
+    tastenNummern.insert( "G5", "59" );
+    tastenNummern.insert( "Ab5","60" );
+    tastenNummern.insert( "A5", "61" );
+    tastenNummern.insert( "Bb5","62" );
+    tastenNummern.insert( "B5", "63" );
+    tastenNummern.insert( "C6", "64" );
+    tastenNummern.insert( "Db6", "65" );
+    tastenNummern.insert( "D6", "66" );
+    tastenNummern.insert( "Eb6","67" );
+    tastenNummern.insert( "E6", "68" );
+    tastenNummern.insert( "F6", "69" );
+    tastenNummern.insert( "Gb6","70" );
+    tastenNummern.insert( "G6", "71" );
+    tastenNummern.insert( "Ab6","72" );
+    tastenNummern.insert( "A6", "73" );
+    tastenNummern.insert( "Bb6","74" );
+    tastenNummern.insert( "B6", "75" );
+    tastenNummern.insert( "C7", "76" );
+    tastenNummern.insert( "Db7", "77" );
+    tastenNummern.insert( "D7", "78" );
+    tastenNummern.insert( "Eb7","79" );
+    tastenNummern.insert( "E7", "80" );
+    tastenNummern.insert( "F7", "81" );
+    tastenNummern.insert( "Gb7","82" );
+    tastenNummern.insert( "G7", "83" );
+    tastenNummern.insert( "Ab7","84" );
+    tastenNummern.insert( "A7", "85" );
+    tastenNummern.insert( "Bb7","86" );
+    tastenNummern.insert( "B7", "87" );
+    tastenNummern.insert( "C8", "88" );
+
+    return (tastenNummern.contains(notenName)) ? tastenNummern[notenName] : "ERROR";
 }
 
 bool MainWindow::speichern() const
